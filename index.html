@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leia Proto - XUX</title>
+    <meta charset="UTF-8">
+    <base href="/">
+</head>
+
+<body>
+    <header>
+        <a id="home-title" href="#/overview" title="Leia"><span>Leia</span></a>
+        <nav>
+            <ul>
+                <li id="setting"><a href="#/setting">Setting</a>
+                </li>
+                <li id="information"><a href="#/info">Insformation</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <nav></nav>
+    <nav>
+        <ul id="main-menu">
+            <li id="overview"><a class='spa-route' href="#/overview">Overview</a>
+            </li>
+            <li id="accounts"><a class='spa-route' href="#/accounts">Account Management</a>
+            </li>
+            <li id="clouds"><a class='spa-route' href="#/clouds">Cloud Services</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id='main'>
+    </main>
+    <footer>
+        <nav>
+            <ul id="footer">
+                <li>&nbsp;</li>
+            </ul>
+        </nav>
+        &#169;2013-2014 Fuji Xerox Co., Ltd All rights reserved.
+    </footer>
+    <script src="lib/xux-js/xux-basg-0.102.js"></script>
+    <script>
+    xuxInitialize({
+        prefix: "lib/",
+        min: false
+    });
+    </script>
+    <script src="lib/xux-js/xux-basg-fujixerox-0.102.js"></script>
+    <script src='selectLib.js'></script>
+    <script src="scripts/init.js"></script>
+    <script src="scripts/overview.js"></script>
+
+</body>
+
+</html>
