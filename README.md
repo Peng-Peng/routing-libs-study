@@ -1,2 +1,2 @@
-# routing-lib-study
+# routing-libs-study
 This repository studies and compares different micro routing libraries for Single Page Application
