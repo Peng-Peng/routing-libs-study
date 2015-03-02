@@ -1,19 +1,38 @@
  var routes = {
      '/overview': overview,
-     '/accounts': [accounts, function() {
-         console.log("An inline route handler.");
-     }],
-     '/accounts/view/:bookId': accounts,
-     '/clouds':clouds
+     '/clouds': clouds,
+     '/accounts': accounts
  };
 
  var router = new Router(routes).configure({
-     before: function() {
-         alert('save changes?')
-     }
+     async: true,
+     notfound: defaultRoute
  });
 
+ router.on('/accounts/:role', [isAuthenticated, validateUser]);
  router.init();
+
+ function defaultRoute() {
+    window.location.hash='#/overview';
+ }
+
+ function isAuthenticated(role, next) {
+     console.log('isAuthenticated')
+     console.log(next)
+     if (role === 'external') {
+         next(false);
+     } 
+ }
+
+ function validateUser(role, next) {
+     console.log('validate user')
+     console.log(next)
+     if (role === 'personal') {
+         next(false);
+     } else {
+         next(true);
+     }
+ }
 
  function render(viewModel) {
      $.ajax({
@@ -36,7 +55,7 @@
  }
 
  function accounts(ctx) {
-     //console.log(ctx.params.role);
+     console.log('match to accounts');
      render({
          view: 'accounts'
      });

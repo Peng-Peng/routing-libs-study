@@ -1,5 +1,5 @@
 var map = {};
-var libs = ['routerJs', 'pageJs', 'directorJs', "Don't use external lib"];
+var libs = ['routerJs', 'pageJs', 'directorJs', 'custom', "Don't handle route"];
 
 var select = $("<select></select>").attr("id", 'proto-selector');
 libs.forEach(function(el) {
@@ -25,10 +25,14 @@ map.directorJs = [
     "lib/director.js",
     "scripts/directorJs_route.js"
 ]
-map["Don't use external lib"] = [
+map["Don't handle route"] = [
     "scripts/nolib_route_debug.js"
 ]
-
+map.custom = [
+    "scripts/handlers.js",
+    "lib/route-recognizer.js",
+    "scripts/custom_route.js"
+]
 
 var selected = $('#proto-selector').val();
 var toWrite = '';
