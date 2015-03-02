@@ -30,7 +30,8 @@ map["Don't handle route"] = [
 ]
 map.custom = [
     "scripts/handlers.js",
-    "lib/route-recognizer.js",
+    //"lib/route-recognizer.js",
+    "scripts/custom_routeRecognizer.js",
     "scripts/custom_route.js"
 ]
 
